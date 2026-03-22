@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <section class="auth-shell">
+        <div class="container auth-grid">
+          <div class="glass-card auth-copy">
+            <p class="eyebrow">Creator Access</p>
+            <h1>Login or create your profile.</h1>
+            <p>Like prompts, save bookmarks, and submit your own production-ready prompt modules.</p>
+            <ul class="feature-list compact-list">
+              <li>Bookmark prompts into your personal library</li>
+              <li>Build a creator profile with prompt performance stats</li>
+              <li>Submit prompts through the 3-step review workflow</li>
+            </ul>
+          </div>
+
+          <div class="auth-card">
+            <div class="auth-tabs">
+              <button class="auth-tab active" type="button" data-tab="login">Login</button>
+              <button class="auth-tab" type="button" data-tab="signup">Sign Up</button>
+            </div>
+
+            <form class="auth-form" id="loginForm" data-panel="login">
+              <label>
+                Email
+                <input type="email" id="loginEmail" required />
+              </label>
+              <label>
+                Password
+                <input type="password" id="loginPassword" required />
+              </label>
+              <button class="btn btn-primary" type="submit">Login</button>
+              <p class="form-note" id="loginMessage"></p>
+            </form>
+
+            <form class="auth-form" id="signupForm" data-panel="signup" hidden>
+              <label>
+                Username
+                <input type="text" id="signupUsername" required />
+              </label>
+              <label>
+                Email
+                <input type="email" id="signupEmail" required />
+              </label>
+              <label>
+                Password
+                <input type="password" id="signupPassword" required />
+              </label>
+              <label>
+                Profile Picture (optional)
+                <input type="file" id="signupAvatar" accept="image/*" />
+              </label>
+              <label>
+                Bio
+                <textarea id="signupBio" rows="3"></textarea>
+              </label>
+              <label>
+                Preferred AI Category
+                <select id="signupCategory"></select>
+              </label>
+              <button class="btn btn-primary" type="submit">Create Profile</button>
+              <p class="form-note" id="signupMessage"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="platform.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>

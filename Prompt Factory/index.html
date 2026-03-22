@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Platform | Creator Platform for AI Prompts</title>
+    <meta
+      name="description"
+      content="Prompt Platform is a modern creator platform for production-ready AI prompts across image, video, and text workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html" data-auth-href data-auth-label>Login / Sign Up</a>
+        </nav>
+        <a class="btn btn-primary" href="submit.html">Submit Prompt</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Modern Creator Platform</p>
+            <h1>Production-ready AI prompts for serious image, video, and text work.</h1>
+            <p>
+              Browse powerful prompts, save what matters, copy instantly, and publish your own creator-grade prompt packs for tools like ChatGPT, Midjourney, Runway, Stable Diffusion, Pika, and Sora.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="prompts.html">Explore Prompts</a>
+              <a class="btn btn-secondary" href="submit.html">Submit Your Prompt</a>
+            </div>
+            <ul class="hero-stats" id="homeStats">
+              <li><strong id="statPrompts">0</strong><span>Published prompts</span></li>
+              <li><strong id="statCreators">0</strong><span>Creators</span></li>
+              <li><strong id="statBookmarks">0</strong><span>Bookmarks</span></li>
+            </ul>
+          </div>
+          <div class="hero-art hero-spotlight">
+            <div class="glass-card spotlight-card">
+              <p class="eyebrow">What You Can Do</p>
+              <h3>Creation over consumption.</h3>
+              <ul class="feature-list compact-list">
+                <li>Browse and filter prompts by type, tool, category, and difficulty</li>
+                <li>Like, bookmark, and copy prompt modules instantly</li>
+                <li>Submit production-ready prompts in a guided 3-step flow</li>
+                <li>Build a creator profile with public prompt history</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Featured</p>
+              <h2>Trending prompts this week</h2>
+            </div>
+            <a class="btn btn-ghost" href="prompts.html">See all prompts</a>
+          </div>
+          <div class="prompt-grid" id="featuredGrid"></div>
+          <p class="empty-state" id="featuredEmpty" hidden>No featured prompts are available right now.</p>
+        </div>
+      </section>
+
+      <section class="section-shell saved-shell" id="savedSection" hidden>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">After Login</p>
+              <h2>Your Saved Prompts</h2>
+            </div>
+            <a class="btn btn-ghost" href="bookmarks.html">Open bookmarks</a>
+          </div>
+          <div class="prompt-grid" id="savedGrid"></div>
+          <p class="empty-state" id="savedEmpty" hidden>You haven't saved any prompts yet.</p>
+        </div>
+      </section>
+
+      <section class="section-shell category-showcase">
+        <div class="container category-panel-grid">
+          <a class="category-panel" href="category.html?name=Cinematic">
+            <span class="tag">Cinematic</span>
+            <h3>Film-grade visual prompts</h3>
+            <p>Discover ad-film, trailer, and premium motion prompts built for polished output.</p>
+          </a>
+          <a class="category-panel" href="category.html?name=Corporate">
+            <span class="tag">Corporate</span>
+            <h3>Brand systems and scripting</h3>
+            <p>Structured prompts for brand stories, decks, campaigns, and internal creative systems.</p>
+          </a>
+          <a class="category-panel" href="category.html?name=Reels">
+            <span class="tag">Reels</span>
+            <h3>Fast-moving social formats</h3>
+            <p>Short-form prompts made for vertical video, punchy edits, and high-retention hooks.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p>Prompt Platform</p>
+        <div class="footer-links">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="auth.html">Login</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

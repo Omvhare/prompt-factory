@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompts Browser | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html" data-auth-href data-auth-label>Login / Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-shell browser-shell">
+        <div class="container browser-layout">
+          <aside class="filter-panel">
+            <div class="section-head section-head-tight">
+              <div>
+                <p class="eyebrow">Filter Panel</p>
+                <h2>Refine results</h2>
+              </div>
+            </div>
+            <label>
+              Prompt Type
+              <select id="typeFilter">
+                <option value="all">All</option>
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+                <option value="text">Text</option>
+              </select>
+            </label>
+            <label>
+              Tools
+              <select id="toolFilter"></select>
+            </label>
+            <label>
+              Categories
+              <select id="categoryFilter"></select>
+            </label>
+            <label>
+              Difficulty
+              <select id="difficultyFilter">
+                <option value="all">All</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+            </label>
+            <label>
+              Sort By
+              <select id="sortFilter">
+                <option value="trending">Trending</option>
+                <option value="newest">Newest</option>
+                <option value="most-liked">Most liked</option>
+                <option value="most-viewed">Most viewed</option>
+                <option value="most-copied">Most copied</option>
+              </select>
+            </label>
+            <button class="btn btn-ghost" id="clearFilters" type="button">Clear Filters</button>
+          </aside>
+
+          <section class="browser-content">
+            <div class="browser-toolbar">
+              <div class="search-wrap browser-search">
+                <input type="search" id="searchPrompt" placeholder="Search prompts..." aria-label="Search prompts" />
+              </div>
+              <a class="btn btn-primary" href="submit.html">Submit Prompt</a>
+            </div>
+            <div class="prompt-grid" id="promptGrid"></div>
+            <p class="empty-state" id="promptEmpty" hidden>No prompts match the current filters.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="prompts.js"></script>
+  </body>
+</html>

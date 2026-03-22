@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Detail | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html" data-auth-href data-auth-label>Login / Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="detail-page">
+      <section class="section-shell">
+        <div class="container detail-layout" id="detailLayout" hidden>
+          <div class="detail-main">
+            <div class="detail-media-frame" id="detailMedia"></div>
+            <div class="detail-card">
+              <div class="section-head detail-head">
+                <div>
+                  <p class="eyebrow">Prompt Detail</p>
+                  <h1 id="detailTitle">Prompt title</h1>
+                  <p class="detail-description" id="detailDescription"></p>
+                </div>
+                <div class="detail-actions">
+                  <button class="btn btn-icon like-btn" id="detailLike" type="button">&#9829;</button>
+                  <button class="btn btn-icon bookmark-btn" id="detailBookmark" type="button">&#9734;</button>
+                  <button class="btn btn-primary" id="detailCopy" type="button">Copy Prompt</button>
+                </div>
+              </div>
+              <div class="detail-meta-row">
+                <span class="tag" id="detailType"></span>
+                <span class="tag" id="detailTools"></span>
+                <span class="tag" id="detailDifficulty"></span>
+                <span class="tag" id="detailGenerationTime"></span>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-block-head">
+                <h2>Main Prompt</h2>
+                <button class="btn btn-ghost" id="detailCopySecondary" type="button">Copy</button>
+              </div>
+              <pre id="detailMainPrompt"></pre>
+            </div>
+
+            <div class="detail-card" id="negativeBlock" hidden>
+              <h2>Negative Prompt</h2>
+              <pre id="detailNegativePrompt"></pre>
+            </div>
+
+            <div class="detail-card" id="motionBlock" hidden>
+              <h2>Motion Prompt</h2>
+              <pre id="detailMotionPrompt"></pre>
+            </div>
+          </div>
+
+          <aside class="detail-side">
+            <div class="detail-card">
+              <p class="eyebrow">Creator Profile</p>
+              <div class="creator-profile-card">
+                <img id="detailAvatar" class="detail-avatar" src="avatars/avatar-1.svg" alt="Creator avatar" />
+                <div>
+                  <h2 id="detailCreatorName">creator</h2>
+                  <p id="detailCreatorBio">Creator bio</p>
+                </div>
+              </div>
+              <a class="btn btn-secondary" href="profile.html" id="detailProfileLink">Open profile</a>
+            </div>
+
+            <div class="detail-card">
+              <p class="eyebrow">Metadata</p>
+              <div class="detail-facts">
+                <p><strong>Categories:</strong> <span id="detailCategories"></span></p>
+                <p><strong>Tools:</strong> <span id="detailToolList"></span></p>
+                <p><strong>Likes:</strong> <span id="detailLikes"></span></p>
+                <p><strong>Bookmarks:</strong> <span id="detailBookmarks"></span></p>
+                <p><strong>Views:</strong> <span id="detailViews"></span></p>
+                <p><strong>Copies:</strong> <span id="detailCopies"></span></p>
+                <p><strong>Created:</strong> <span id="detailCreatedAt"></span></p>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="container detail-empty" id="detailEmpty" hidden>
+          <div class="detail-card">
+            <p class="eyebrow">Prompt Missing</p>
+            <h1>This prompt is not available.</h1>
+            <p>It may not be public yet or the link is invalid.</p>
+            <a class="btn btn-primary" href="prompts.html">Back to prompt browser</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="prompt-detail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html" data-auth-href data-auth-label>Login / Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero compact-hero">
+        <div class="container page-hero-inner">
+          <p class="eyebrow">Category</p>
+          <h1 id="categoryTitle">Category prompts</h1>
+          <p id="categorySubtitle">Browse prompts grouped into a single category.</p>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Prompt Collection</p>
+              <h2 id="categoryHeading">Curated modules</h2>
+            </div>
+            <a class="btn btn-ghost" href="prompts.html">Back to browser</a>
+          </div>
+          <div class="prompt-grid" id="categoryGrid"></div>
+          <p class="empty-state" id="categoryEmpty" hidden>No prompts found for this category.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="category.js"></script>
+  </body>
+</html>

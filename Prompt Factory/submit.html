@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Prompt | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html" data-auth-href data-auth-label>Login / Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero compact-hero">
+        <div class="container page-hero-inner">
+          <p class="eyebrow">3-Step Flow</p>
+          <h1>Submit a Prompt</h1>
+          <p>Create a production-ready prompt entry for review in a guided flow.</p>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container submit-wizard-layout">
+          <aside class="wizard-sidebar glass-card">
+            <div class="wizard-step active" data-step-indicator="1">
+              <span>01</span>
+              <div>
+                <strong>Prompt Type</strong>
+                <p>Select image, video, or text</p>
+              </div>
+            </div>
+            <div class="wizard-step" data-step-indicator="2">
+              <span>02</span>
+              <div>
+                <strong>Prompt Details</strong>
+                <p>Write the prompt and upload preview</p>
+              </div>
+            </div>
+            <div class="wizard-step" data-step-indicator="3">
+              <span>03</span>
+              <div>
+                <strong>Tags & Metadata</strong>
+                <p>Add categories, tools, and difficulty</p>
+              </div>
+            </div>
+          </aside>
+
+          <section class="wizard-panel">
+            <form id="submitWizard" class="submit-form wizard-form">
+              <div class="wizard-stage" data-step="1">
+                <div class="section-head section-head-tight">
+                  <div>
+                    <p class="eyebrow">Step 1</p>
+                    <h2>Choose your prompt type</h2>
+                  </div>
+                </div>
+                <div class="type-card-grid" id="typeCardGrid"></div>
+                <div class="wizard-actions">
+                  <button class="btn btn-primary" type="button" id="toStep2">Continue</button>
+                </div>
+              </div>
+
+              <div class="wizard-stage" data-step="2" hidden>
+                <div class="section-head section-head-tight">
+                  <div>
+                    <p class="eyebrow">Step 2</p>
+                    <h2>Add prompt details</h2>
+                  </div>
+                </div>
+                <label>
+                  Prompt Title
+                  <input type="text" id="promptTitle" required />
+                </label>
+                <label>
+                  Short Description
+                  <input type="text" id="promptDescription" required />
+                </label>
+                <label>
+                  Main Prompt
+                  <textarea id="mainPrompt" rows="7" required placeholder="Epic cinematic shot of a futuristic city at sunset, neon reflections, dramatic lighting"></textarea>
+                </label>
+                <label>
+                  Negative Prompt
+                  <textarea id="negativePrompt" rows="3" placeholder="blurry, distorted face, low resolution"></textarea>
+                </label>
+                <label id="motionPromptWrap" hidden>
+                  Motion Prompt
+                  <textarea id="motionPrompt" rows="3" placeholder="slow cinematic camera push, soft lighting movement"></textarea>
+                </label>
+                <label>
+                  Upload Preview
+                  <input id="previewUpload" type="file" multiple accept="image/*,video/*" />
+                </label>
+                <div class="media-preview" id="uploadPreview"></div>
+                <div class="wizard-actions split-actions">
+                  <button class="btn btn-ghost" type="button" id="backTo1">Back</button>
+                  <button class="btn btn-primary" type="button" id="toStep3">Continue</button>
+                </div>
+              </div>
+
+              <div class="wizard-stage" data-step="3" hidden>
+                <div class="section-head section-head-tight">
+                  <div>
+                    <p class="eyebrow">Step 3</p>
+                    <h2>Tags and metadata</h2>
+                  </div>
+                </div>
+                <div>
+                  <p class="field-title">Category multi-select</p>
+                  <div class="chip-grid" id="categoryOptions"></div>
+                </div>
+                <div>
+                  <p class="field-title">Tools multi-select</p>
+                  <div class="chip-grid" id="toolOptions"></div>
+                </div>
+                <label>
+                  Difficulty
+                  <select id="difficultySelect">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </label>
+                <label>
+                  Generation Time
+                  <input type="text" id="generationTime" placeholder="5–8 seconds video generation" />
+                </label>
+
+                <div class="preview-card" id="submitPreviewCard"></div>
+
+                <div class="wizard-actions split-actions">
+                  <button class="btn btn-ghost" type="button" id="backTo2">Back</button>
+                  <button class="btn btn-primary" type="submit">Submit Prompt</button>
+                </div>
+                <p class="form-note" id="submitStatus" aria-live="polite"></p>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="submit.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarks | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html" data-auth-href data-auth-label>Login / Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero compact-hero">
+        <div class="container page-hero-inner">
+          <p class="eyebrow">Personal Library</p>
+          <h1>Saved prompts</h1>
+          <p>Everything you bookmarked appears here for quick access.</p>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="container">
+          <div class="prompt-grid" id="bookmarksGrid"></div>
+          <p class="empty-state" id="bookmarksEmpty" hidden>You haven't saved any prompts yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="bookmarks.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | Prompt Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PP</span>
+          <span>Prompt Platform</span>
+        </a>
+        <nav class="main-nav">
+          <a href="prompts.html">Prompts</a>
+          <a href="submit.html">Submit</a>
+          <a href="bookmarks.html">Bookmarks</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+        <a href="#" class="btn btn-ghost" data-logout hidden>Logout</a>
+      </div>
+    </header>
+
+    <main class="profile-page-v2">
+      <section class="profile-cover"></section>
+      <section class="profile-shell">
+        <div class="container profile-layout-v2">
+          <aside class="profile-sidebar glass-card">
+            <img id="profileAvatar" class="profile-display-avatar" src="avatars/avatar-1.svg" alt="Profile avatar" />
+            <h1 id="profileUsername">Username</h1>
+            <p class="profile-bio" id="profileBio">Bio</p>
+            <div class="profile-stats-grid">
+              <div><strong id="profilePromptCount">0</strong><span>Prompts</span></div>
+              <div><strong id="profileLikeCount">0</strong><span>Likes</span></div>
+              <div><strong id="profileBookmarkCount">0</strong><span>Bookmarks</span></div>
+            </div>
+            <div class="profile-meta-list">
+              <p><strong>Join date:</strong> <span id="profileJoinDate">-</span></p>
+              <p><strong>Email:</strong> <span id="profileEmail">-</span></p>
+              <p><strong>Preferred category:</strong> <span id="profileCategory">-</span></p>
+            </div>
+          </aside>
+
+          <section class="profile-main glass-card">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Dashboard</p>
+                <h2>Creator profile</h2>
+              </div>
+              <a class="btn btn-primary" href="submit.html">Submit New Prompt</a>
+            </div>
+
+            <div class="tab-row">
+              <button class="tab-btn active" type="button" data-tab="prompts">Prompts</button>
+              <button class="tab-btn" type="button" data-tab="bookmarks">Bookmarks</button>
+              <button class="tab-btn" type="button" data-tab="liked">Liked</button>
+              <button class="tab-btn" type="button" data-tab="settings">Settings</button>
+            </div>
+
+            <div class="tab-panel active" data-panel="prompts">
+              <div class="prompt-grid" id="profilePromptsGrid"></div>
+              <p class="empty-state" id="profilePromptsEmpty" hidden>No prompts created yet.</p>
+            </div>
+
+            <div class="tab-panel" data-panel="bookmarks" hidden>
+              <div class="prompt-grid" id="profileBookmarksGrid"></div>
+              <p class="empty-state" id="profileBookmarksEmpty" hidden>No bookmarks yet.</p>
+            </div>
+
+            <div class="tab-panel" data-panel="liked" hidden>
+              <div class="prompt-grid" id="profileLikedGrid"></div>
+              <p class="empty-state" id="profileLikedEmpty" hidden>No liked prompts yet.</p>
+            </div>
+
+            <div class="tab-panel" data-panel="settings" hidden>
+              <form class="submit-form settings-form" id="settingsForm">
+                <label>
+                  Username
+                  <input type="text" id="settingsUsername" required />
+                </label>
+                <label>
+                  Bio
+                  <textarea id="settingsBio" rows="4"></textarea>
+                </label>
+                <label>
+                  Profile Picture
+                  <input type="file" id="settingsAvatar" accept="image/*" />
+                </label>
+                <label>
+                  Preferred AI Category
+                  <select id="settingsCategory"></select>
+                </label>
+                <button class="btn btn-primary" type="submit">Save Settings</button>
+                <p class="form-note" id="settingsMessage"></p>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="media-store.js"></script>
+    <script src="platform.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>
