@@ -221,6 +221,8 @@ img {
 
 .eyebrow {
   margin: 0 0 0.8rem;
+  margin-top: 10px;
+  margin-left: 10px;
   color: var(--primary-strong);
   font-weight: 700;
   letter-spacing: 0.08em;
